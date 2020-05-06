@@ -1,0 +1,14 @@
+.Button {
+    width: 100px;
+    padding: 10px 30px;
+    margin: 5px;
+    color: #fff;
+    border: none;
+    border-radius: 2px;
+    cursor: pointer;
+
+    &:disabled {
+        background-color: #848484 !important;
+
+    }
+}

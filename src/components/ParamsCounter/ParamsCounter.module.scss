@@ -1,0 +1,16 @@
+.ParamsCounter {
+  display: flex;
+  justify-content: center;
+
+  .wrapContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    border: 1px solid #6fb3ff;
+    border-radius: 5px;
+  }
+
+}
+
