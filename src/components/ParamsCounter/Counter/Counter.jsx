@@ -18,15 +18,14 @@ class Counter extends React.Component {
                     className={`
                     ${classes.screen}
                     ${counter >= setMaxValue && !isDifferentParams || wrongParams ? classes.max : ''}`}
-                    style={{fontSize: isDifferentParams ? '16px' : ''}}
+                    style={{fontSize: isDifferentParams ? '24px' : ''}}
                 >
                     {
                         wrongParams
                             ?
                             'incorrect value!'
                             :
-                            isDifferentParams ? `enter values and press \'set\'` : counter   // Перенос строки! и проблема с wrongParams
-
+                            isDifferentParams ? <span>enter values<br/>and press 'set'</span> : counter
                     }
                 </div>
                 <div>

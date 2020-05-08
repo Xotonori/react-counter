@@ -72,6 +72,7 @@ class App extends React.Component {
     render() {
         return (
             <div className={'App'}>
+                {/*<span>qweqweqwe sdfds1</span>&gt;2fhfhfggh*/}
                 <ParamsCounter
                     state={this.state}
                     incCounter={this.incCounter}
