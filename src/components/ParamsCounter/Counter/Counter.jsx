@@ -5,31 +5,47 @@ import Button from "../Button/Button";
 class Counter extends React.Component {
 
     render() {
+
+        let setStartValue = +this.props.setStartValue;
+        let setMaxValue = +this.props.setMaxValue;
+        let counter = +this.props.counter;
+        let wrongParams = this.props.wrongParams;
+        let isDifferentParams = this.props.isDifferentParams();
+
         return (
             <div className={`${this.props.propsClassName} ${classes.Counter}`}>
-                <div className={`${classes.screen} ${this.props.counter >= 5 ? classes.max : ''}`}>
-                    {this.props.counter}
+                <div
+                    className={`
+                    ${classes.screen}
+                    ${counter >= setMaxValue && !isDifferentParams || wrongParams ? classes.max : ''}`}
+                >
+                    {
+                        !wrongParams
+                        ?
+                        isDifferentParams ? 'set new params' : counter
+                        :
+                        'not correct!!!'
+                    }
                 </div>
-
                 <div>
                     <Button
-                        conditionDisable={this.props.counter === 5}
+                        disabled={counter === setMaxValue || isDifferentParams}
                         onChangeValue={this.props.incCounter}
                         name={'inc'}
                         backgroundColor={'#6fb3ff'}
+                        active={'darkBlue'}
                     />
-
                     <Button
-                        conditionDisable={this.props.counter === 0}
+                        disabled={counter === setStartValue || isDifferentParams}
                         onChangeValue={this.props.resetCounter}
                         name={'reset'}
-                        backgroundColor={'#ff6762'}
+                        backgroundColor={'#ff5c48'}
+                        active={'darkRed'}
                     />
                 </div>
             </div>
         );
     }
-
 }
 
 export default Counter;

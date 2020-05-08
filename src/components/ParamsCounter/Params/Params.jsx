@@ -6,27 +6,36 @@ import InputParam from "./InputParam/InputParam";
 class Params extends React.Component {
 
     render() {
-        return (
 
+        let startValue = +this.props.startValue;
+        let maxValue = +this.props.maxValue;
+        let wrongParams = this.props.wrongParams;
+
+        return (
             <div className={`${this.props.propsClassName} ${classes.Params}`}>
                 <div className={classes.wrapInputParam}>
                     <InputParam
                         id={'maxValue'}
                         labelValue={'max value:'}
-                        inputValue={0}
+                        inputValue={maxValue}
+                        changeInputValue={this.props.changeInputValue}
+                        wrongParams={wrongParams}
                     />
                     <InputParam
                         id={'startValue'}
                         labelValue={'start value:'}
-                        inputValue={0}
+                        inputValue={startValue}
+                        changeInputValue={this.props.changeInputValue}
+                        wrongParams={wrongParams}
                     />
                 </div>
                 <div className={classes.wrapButton}>
                     <Button
-                        conditionDisable={false}
-                        onChangeValue={()=>{}}
                         name={'set'}
                         backgroundColor={'#6fb3ff'}
+                        disabled={maxValue < 0 || startValue < 0 || wrongParams}
+                        active={'darkBlue'}
+                        onChangeValue={() => this.props.setValues(startValue, maxValue)}
                     />
                 </div>
             </div>
