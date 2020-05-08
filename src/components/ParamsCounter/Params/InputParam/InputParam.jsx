@@ -4,7 +4,7 @@ import classes from './InputParam.module.scss';
 class InputParam extends React.Component {
 
     changeInputValue = (e) => {
-        this.props.changeInputValue(e.currentTarget.value, e.currentTarget.id)
+        this.props.changeInputValue(+e.currentTarget.value, e.currentTarget.id)
     };
 
     render() {

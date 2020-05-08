@@ -79,7 +79,6 @@ class App extends React.Component {
                     changeInputValue={this.changeInputValue}
                     setValues={this.setValues}
                     isDifferentParams={this.isDifferentParams}
-                    wrongParams={this.state.wrongParams}
                 />
             </div>
         )

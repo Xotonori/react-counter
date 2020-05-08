@@ -6,9 +6,9 @@ class Counter extends React.Component {
 
     render() {
 
-        let setStartValue = +this.props.setStartValue;
-        let setMaxValue = +this.props.setMaxValue;
-        let counter = +this.props.counter;
+        let setStartValue = this.props.setStartValue;
+        let setMaxValue = this.props.setMaxValue;
+        let counter = this.props.counter;
         let wrongParams = this.props.wrongParams;
         let isDifferentParams = this.props.isDifferentParams();
 
@@ -18,13 +18,15 @@ class Counter extends React.Component {
                     className={`
                     ${classes.screen}
                     ${counter >= setMaxValue && !isDifferentParams || wrongParams ? classes.max : ''}`}
+                    style={{fontSize: isDifferentParams ? '16px' : ''}}
                 >
                     {
-                        !wrongParams
-                        ?
-                        isDifferentParams ? 'set new params' : counter
-                        :
-                        'not correct!!!'
+                        wrongParams
+                            ?
+                            'incorrect value!'
+                            :
+                            isDifferentParams ? `enter values and press \'set\'` : counter   // Перенос строки! и проблема с wrongParams
+
                     }
                 </div>
                 <div>

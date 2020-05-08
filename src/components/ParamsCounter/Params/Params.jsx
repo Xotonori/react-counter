@@ -7,8 +7,8 @@ class Params extends React.Component {
 
     render() {
 
-        let startValue = +this.props.startValue;
-        let maxValue = +this.props.maxValue;
+        let startValue = this.props.startValue;
+        let maxValue = this.props.maxValue;
         let wrongParams = this.props.wrongParams;
 
         return (

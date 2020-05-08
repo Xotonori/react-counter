@@ -12,20 +12,18 @@ class ParamsCounter extends React.Component {
                     propsClassName={classes.wrapContainer}
                     startValue={this.props.state.startValue}
                     maxValue={this.props.state.maxValue}
-                    changeInputValue={this.props.changeInputValue}
                     wrongParams={this.props.state.wrongParams}
+                    changeInputValue={this.props.changeInputValue}
                     setValues={this.props.setValues}
                 />
                 <Counter
                     propsClassName={classes.wrapContainer}
                     counter={this.props.state.counter}
-                    incCounter={this.props.incCounter}
-                    resetCounter={this.props.resetCounter}
-                    // startValue={this.props.state.startValue}
-                    // maxValue={this.props.state.maxValue}
                     setStartValue={this.props.state.setStartValue}
                     setMaxValue={this.props.state.setMaxValue}
-                    wrongParams={this.props.wrongParams}
+                    wrongParams={this.props.state.wrongParams}
+                    incCounter={this.props.incCounter}
+                    resetCounter={this.props.resetCounter}
                     isDifferentParams={this.props.isDifferentParams}
                 />
             </div>
